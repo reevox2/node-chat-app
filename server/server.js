@@ -16,7 +16,7 @@ io.on('connection', (socket)=>{
 	console.log('new user connected');
 
 	socket.on('createMessage', newMessage => {
-		socket.emit('newMessage', {
+		io.emit('newMessage', {
 			from: newMessage.from,
 			message: newMessage.message,
 			createdAt: moment().format('HH:mm')
