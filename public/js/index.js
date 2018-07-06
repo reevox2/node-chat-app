@@ -5,15 +5,15 @@ socket.on('connect', function (){
 
 	socket.emit('createMessage', {
 		from: 'Jimmy Johns',
-		message: `Hey. This is Jimmy Johns'. Your sandwich is downstairs bud.`
+		text: `Hey guys, I just joined.`
 	});
 
 });
 
 socket.on('newMessage', function (message) {
-	console.log(`${message.createdAt} ${message.from}: ${message.message}`);
+	console.log(`(${message.createdAt}) ${message.from}: ${message.text}`);
 })
 
-socket.on('disconnect', function (){
-	console.log('Disconnected from server.')
+socket.on('disconnect', function (reason){
+	console.log(reason, ': Disconnected from server.')
 });
