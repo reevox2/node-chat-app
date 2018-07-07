@@ -12,7 +12,7 @@ describe('generateMessage', ()=>{
 		//assert text matches up
 		expect(response.text).toBe('Hey whats up');
 		//assert createdAt value is valid
-		expect(moment(response.createdAt,'HH:mm:ss').isValid()).toBe(true);
+		expect(moment(response.createdAt).isValid()).toBe(true);
 	})
 })
 
@@ -30,6 +30,6 @@ describe('generateLocationMessage', ()=>{
 			url: 'https://www.google.com/maps?q=1,2'
 		});
 		//assert createdAt value is valid
-		expect(moment(coords.createdAt,'HH:mm:ss').isValid()).toBe(true);
+		expect(moment(coords.createdAt).isValid()).toBe(true);
 	})
 })
